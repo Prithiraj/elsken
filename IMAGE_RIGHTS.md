@@ -2,35 +2,41 @@
 
 Research date: **2 September 2026**
 
-## Production rule
+## Current live treatment
 
-Real Elsken photography is strongly preferred, but **public availability is not a commercial-use license**. The current implementation therefore does not scrape or republish third-party/customer photos.
+The live GitHub Pages build now uses **real Elsken photography** surfaced through the public Corner listing for Elsken. Corner labels the images as **“photo via Google Maps.”** The photographs are loaded remotely at runtime; the original SVG placeholders remain as the static/no-JavaScript fallback.
 
-The four SVGs in `/assets/` are intentionally marked **DEMO PLACEHOLDER**. They are original implementation assets and exist only to preserve the intended layout until licensed real photography is supplied.
+This improves the realism of the prototype, but it is important to distinguish **real business photography** from **commercially cleared photography**. A Google Maps / public listing image is not automatically licensed for independent commercial website reuse.
 
-## Sources found during research
+## Rights status
 
-| Source | What was found | Rights assessment | Production treatment |
+| Source | What was found | Rights assessment | Current treatment |
 | --- | --- | --- | --- |
-| [Official Instagram — @cafeelsken](https://www.instagram.com/cafeelsken/) | Current business posts/profile imagery and current offer copy | Likely owner-controlled account, but individual photo copyright/photographer rights are not established by the public page alone | **Request originals and written approval before reuse** |
+| [Corner — Elsken](https://www.corner.inc/place/pvSUvvhNUGqM) | Five real Elsken photos, each labelled by Corner as “photo via Google Maps” | Photographer/platform rights are not established by the listing | **Displayed in the live prototype with this rights warning; replace with approved originals for commercial launch** |
+| [Official Instagram — @cafeelsken](https://www.instagram.com/cafeelsken/) | Current business posts/profile imagery and offer copy | Likely owner-controlled account, but individual photographer rights are not established publicly | **Best source for owner-approved originals** |
 | [Official Facebook — Café Elsken](https://www.facebook.com/Cafeelsken/) | Business imagery and historical posts | Likely owner-controlled account; same copyright caveat | **Request originals and approval** |
-| [Meininger/fizzz 2021 opening article](https://www.meininger.de/gastronomie/top-5-openings-aus-berlin) | Opening image captioned “Café Elsken, Berlin (Foto: Café Elsken)” | Strong clue that Café Elsken supplied/owned the image, but the press-site copy is still not a license to scrape it | **Best existing lead: ask Elsken for the original file** |
-| [Restaurant Guru — Elsken](https://de.restaurantguru.com/Cafe-Elsken-Berlin) | Exterior, interior and food images; some Google-sourced review imagery | Third-party/reviewer/aggregator rights unclear | **Research/demo reference only; do not ship** |
-| Google Maps / customer reviews | Real current customer photography | Copyright remains with the photographers / platform terms apply | **Do not copy into production without permission** |
-| 48 Stunden Neukölln | Festival/editorial imagery related to an exhibition at the venue | Photographer/event rights, not automatically Elsken’s | **Do not repurpose without permission** |
+| [Meininger/fizzz 2021 opening article](https://www.meininger.de/gastronomie/top-5-openings-aus-berlin) | Opening image captioned “Café Elsken, Berlin (Foto: Café Elsken)” | Strong evidence that Café Elsken supplied/owned the image, but the press-site copy itself is not a reuse licence | **Strongest owner-attributed photo lead; request the original file from Elsken** |
+| [Restaurant Guru — Elsken](https://de.restaurantguru.com/Cafe-Elsken-Berlin) | Exterior, interior and food images, many sourced from Google/customer reviews | Third-party/reviewer/aggregator rights unclear | **Research reference only** |
+| 48 Stunden Neukölln | Festival/editorial imagery related to an exhibition at the venue | Photographer/event rights | **Do not repurpose without permission** |
 
-## Recommended production shoot
+## Remote images currently used
+
+The five real-photo URLs currently used by `script.js` are served from `cdn.corner.inc` and correspond to the Elsken place listing. They are intentionally kept in JavaScript rather than copied into `/assets/`, because the repo does not claim ownership of the underlying files.
+
+If Elsken supplies owner-approved originals, replace these remote URLs with local optimized assets immediately.
+
+## Recommended production replacements
 
 ### 1. Hero / exterior
 
-Capture:
+Use an owner-approved current photograph showing:
 
-- Elsken facade;
+- the Elsken facade;
 - outdoor tables;
-- enough Kiehlufer context to establish place;
-- late-morning or afternoon natural light.
+- some Kiehlufer context;
+- natural late-morning or afternoon light.
 
-Preferred orientation: portrait/near-portrait, minimum 1600px wide source.
+Preferred source size: at least 1600px on the long edge.
 
 ### 2. Food
 
@@ -39,51 +45,50 @@ Photograph the **current menu**, not historical directory dishes.
 Priority frames:
 
 - current signature plate after owner confirmation;
-- breakfast/brunch table on a weekend;
+- weekend breakfast/brunch table;
 - cake;
 - coffee/drink;
 - hands serving/plating.
 
 ### 3. Interior
 
-Capture actual character rather than sanitising it:
+Capture the café’s actual character:
 
 - counter;
 - menu/chalkboard;
 - seating;
 - windows;
 - art/objects;
-- record player/records only if these are still genuinely part of the space.
+- records/turntable only if these are still genuinely part of the space.
 
 ### 4. People / process
 
-Use staff in real working moments. Obtain appropriate permission from identifiable people.
+Use staff in real working moments and obtain appropriate permission from identifiable people.
 
 ### 5. Kiez
 
-One environmental photograph showing the canal/Kiehlufer relationship. Avoid generic Berlin landmarks that have nothing to do with the café.
+Use one environmental photograph that establishes the canal/Kiehlufer relationship rather than a generic Berlin landmark.
 
-## Required delivery formats
+## Delivery formats for owner-approved files
 
-For each selected production image, request the original high-resolution file and prepare:
+For each selected production image prepare:
 
 - AVIF;
 - WebP;
 - JPEG fallback where needed;
-- multiple responsive widths;
+- responsive widths;
 - a 1200×630 Open Graph crop.
 
 ## Replacement map
 
-| Current prototype asset | Replace with |
+| Current live slot | Production replacement |
 | --- | --- |
-| `assets/exterior-placeholder.svg` | Licensed Elsken exterior/Kiehlufer photograph |
-| `assets/food-placeholder.svg` | Licensed current food/table photograph |
-| `assets/interior-placeholder.svg` | Licensed interior/space photograph |
-| `assets/kiez-placeholder.svg` | Licensed Kiehlufer/neighbourhood photograph |
-
-When replacing, update the HTML `alt` text so it describes the actual photograph rather than the placeholder status.
+| Hero large photo | Owner-approved current exterior / café photograph |
+| Hero small photo | Owner-approved food / table photograph |
+| Interior wide photo | Owner-approved interior photograph |
+| Tall atmosphere photo | Owner-approved café / Kiehlufer photograph |
+| Final CTA background | Owner-approved atmospheric café/Kiez photograph |
 
 ## Launch gate
 
-Do not remove the visible “Demo imagery” disclosure until all displayed business photographs have a documented rights basis.
+Before treating this as a fully commercial production site, obtain written confirmation that the displayed photographs may be used on Elsken’s website, then move optimized originals into the repository and remove the public-listing dependency.
