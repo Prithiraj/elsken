@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Elsken interior demo placeholder</title>
+  <desc id="desc">Stylised editorial interior placeholder. Replace with licensed Elsken interior photography before launch.</desc>
+  <rect width="1200" height="820" fill="#d8c7ac"/>
+  <rect width="1200" height="62" fill="#20201d"/>
+  <text x="34" y="41" fill="#fbf8f2" font-family="Arial,sans-serif" font-size="17" letter-spacing="2">DEMO · LICENSED ELSKEN INTERIOR PHOTO REQUIRED</text>
+  <rect x="80" y="120" width="570" height="520" fill="#f4efe5"/>
+  <rect x="700" y="120" width="420" height="300" fill="#276366"/>
+  <rect x="740" y="160" width="340" height="220" fill="#20201d"/>
+  <text x="910" y="245" text-anchor="middle" fill="#fbf8f2" font-family="Georgia,serif" font-size="34" font-style="italic">menu / notes</text>
+  <line x1="785" y1="285" x2="1035" y2="285" stroke="#fbf8f2" stroke-width="4" opacity=".7"/>
+  <line x1="800" y1="320" x2="1020" y2="320" stroke="#fbf8f2" stroke-width="4" opacity=".5"/>
+  <rect x="130" y="175" width="190" height="220" fill="#b5d0cd"/>
+  <rect x="350" y="175" width="250" height="220" fill="#b5d0cd"/>
+  <line x1="225" y1="175" x2="225" y2="395" stroke="#20201d" stroke-width="8"/>
+  <line x1="475" y1="175" x2="475" y2="395" stroke="#20201d" stroke-width="8"/>
+  <ellipse cx="280" cy="560" rx="150" ry="38" fill="#b88961"/>
+  <line x1="280" y1="598" x2="280" y2="708" stroke="#20201d" stroke-width="16"/>
+  <ellipse cx="865" cy="586" rx="192" ry="47" fill="#c8543f"/>
+  <line x1="865" y1="630" x2="865" y2="740" stroke="#20201d" stroke-width="16"/>
+  <circle cx="820" cy="535" r="28" fill="#fbf8f2"/>
+  <circle cx="905" cy="535" r="28" fill="#fbf8f2"/>
+  <path d="M726 469c60-34 121-29 177 13" fill="none" stroke="#276366" stroke-width="12" stroke-linecap="round"/>
+  <text x="80" y="775" fill="#20201d" font-family="Georgia,serif" font-size="31" font-style="italic">real space · real details · no stock photography</text>
+</svg>
