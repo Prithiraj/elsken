@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+  <title id="title">Elsken food demo placeholder</title>
+  <desc id="desc">Stylised editorial food placeholder. Replace with licensed current Elsken menu photography before launch.</desc>
+  <rect width="720" height="720" fill="#f4efe5"/>
+  <rect x="0" y="0" width="720" height="58" fill="#20201d"/>
+  <text x="28" y="38" fill="#fbf8f2" font-family="Arial,sans-serif" font-size="15" letter-spacing="2">DEMO · REPLACE WITH LICENSED ELSKEN FOOD PHOTO</text>
+  <circle cx="360" cy="390" r="245" fill="#20201d"/>
+  <circle cx="360" cy="390" r="216" fill="#c8543f"/>
+  <path d="M205 384c42-102 120-158 218-122 98 36 119 119 52 214-68 96-221 80-270-92Z" fill="#dca74f"/>
+  <circle cx="300" cy="348" r="49" fill="#fbf8f2"/>
+  <circle cx="432" cy="417" r="58" fill="#fbf8f2"/>
+  <path d="M241 453c55-49 102-57 160-31" fill="none" stroke="#276366" stroke-width="24" stroke-linecap="round"/>
+  <path d="M421 315c45 24 82 17 115-18" fill="none" stroke="#276366" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="270" cy="440" r="15" fill="#276366"/>
+  <circle cx="475" cy="363" r="12" fill="#276366"/>
+  <circle cx="390" cy="493" r="17" fill="#276366"/>
+  <text x="360" y="674" text-anchor="middle" fill="#20201d" font-family="Georgia,serif" font-size="27" font-style="italic">Actual menu photo pending rights clearance</text>
+</svg>
