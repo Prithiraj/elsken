@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="1000" viewBox="0 0 760 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Kiehlufer demo placeholder</title>
+  <desc id="desc">Stylised editorial placeholder for the Kiehlufer and neighbourhood around Elsken. Replace with licensed local photography before launch.</desc>
+  <rect width="760" height="1000" fill="#b5d0cd"/>
+  <rect width="760" height="64" fill="#20201d"/>
+  <text x="30" y="42" fill="#fbf8f2" font-family="Arial,sans-serif" font-size="16" letter-spacing="2">DEMO · LICENSED KIEHLUFER PHOTO REQUIRED</text>
+  <circle cx="585" cy="210" r="110" fill="#dca74f"/>
+  <path d="M-40 790C130 620 270 680 398 575c132-108 235-95 420-210" fill="none" stroke="#276366" stroke-width="108"/>
+  <path d="M-40 790C130 620 270 680 398 575c132-108 235-95 420-210" fill="none" stroke="#f4efe5" stroke-width="4" stroke-dasharray="9 18" opacity=".8"/>
+  <rect x="80" y="310" width="238" height="312" fill="#c8543f"/>
+  <rect x="102" y="350" width="85" height="120" fill="#f4efe5"/>
+  <rect x="208" y="350" width="85" height="120" fill="#f4efe5"/>
+  <rect x="102" y="494" width="191" height="97" fill="#20201d"/>
+  <path d="M95 750h230" stroke="#20201d" stroke-width="12" stroke-linecap="round"/>
+  <path d="M140 690v60M280 690v60" stroke="#20201d" stroke-width="12"/>
+  <text x="70" y="930" fill="#20201d" font-family="Georgia,serif" font-size="42" font-style="italic">Kiehlufer · Neukölln</text>
+  <text x="72" y="964" fill="#20201d" font-family="Arial,sans-serif" font-size="16" letter-spacing="2">PLACE IS PART OF THE STORY</text>
+</svg>
