@@ -1,26 +1,32 @@
 document.documentElement.classList.add('js');
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const header = document.querySelector('[data-header]');
 
+/* Reveal content progressively, but never hide it when the API is unavailable. */
 if (!reducedMotion && 'IntersectionObserver' in window) {
-  const observer = new IntersectionObserver((entries) => {
+  const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+        revealObserver.unobserve(entry.target);
       }
     });
-  }, {
-    rootMargin: '0px 0px -8% 0px',
-    threshold: 0.08
-  });
+  }, { rootMargin: '0px 0px -7% 0px', threshold: 0.07 });
 
-  document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
 } else {
   document.querySelectorAll('.reveal').forEach((element) => element.classList.add('is-visible'));
 }
 
-// Close the native mobile menu after choosing an in-page destination.
+/* Header state. */
+function updateHeader() {
+  if (header) header.classList.toggle('is-scrolled', window.scrollY > 24);
+}
+updateHeader();
+window.addEventListener('scroll', updateHeader, { passive: true });
+
+/* Close the native mobile menu after selecting an in-page link. */
 document.querySelectorAll('.mobile-menu a[href^="#"]').forEach((link) => {
   link.addEventListener('click', () => {
     const details = link.closest('details');
@@ -28,184 +34,263 @@ document.querySelectorAll('.mobile-menu a[href^="#"]').forEach((link) => {
   });
 });
 
-/*
- * Real Elsken photography
- * -----------------------
- * These images are from Corner's Elsken place listing, which labels them
- * "photo via Google Maps". They show the real business, but public listing
- * availability is not proof of a commercial reuse licence. See IMAGE_RIGHTS.md.
- *
- * The SVG placeholders remain the no-JS/static fallback.
- */
-const elskenPhotos = [
-  'https://cdn.corner.inc/place-photo/AWn5SU5LLQc_n8c54yxzO5bMxW8gQ22KfMAPeRUUsFHCNAmzMCJPDIQjRiyd4_-xXaH7emtRtaxClRJFWEdNP4KytJiAYqke-Zxx18uHYzXN18UF3LJOI9I0NZRZcl0xBxCOw82sFKQ-Xn8NX-HhCQhK7eFSbBTnji5OL3D_uUTalskN-jo4udxYJz-flSJMST8ZvndE3AqqXsmLUhOeImRqfkR2clpKTLweh9jvF1kUAJ4DOT8w7ouHeBFrfLwWqWlli0nimZDQv0llYw9TEgvMoHSGOosCeUYeDUhO2OBDepYGesF7vQGb_SMtnOJwmn5HbzA-vdc0Jn8Z0H4vFXpJBP2IRQx-3tM4jVUXK_vfgqR62wLZg8RwPr5UDI-G-7W-G5Tt4-rpekNl4KAyCitZ3RHmwwyE46srQinduxq0ycrzUy5s.jpeg',
-  'https://cdn.corner.inc/place-photo/AWn5SU7vPoFmHDgtsQVjys8nlsiF_eyxpEc_ydWanYoKd1Ei_wUhvnEd9lPdM70ouGbJ7iJkN8cqFhcGdtDECPkGe-0FNutQDapcHDftuMcr5vxLFQFi62dQUbQWSM6M4YGjL7vrUbvkyGULpfLGBIj3Iyw9v1Nf8jeEKiFS3ZIMTR531RVMyr9Hdo1rquZSQkEtr-228y7mFQYdqI729J_zFfwH-Jo24XVyCNGLnhvdJN2ExcGTMwZpABUzyTV6x2dvymBu9mGxMne4_U2jdJONFOFfAGi4BFIZsjw5qWKbdG92jw.jpeg',
-  'https://cdn.corner.inc/place-photo/AWn5SU6fiPuYzILhXTq41ALvkxFw3dAfsQHdABqKJV7xArWcqNbfK9U2IIY7A8NfOqhY1MKh_jLvQnM2KQegxjQkg-nNnCMNNscD-uPYYy1JijueCMr0N5pG_FX7KZgBYr7aZaPp-yDFkfj8S1x-fzjTqbiBYqBUN7hURup_vLoLZzcyuJ79Kj3s8NfGFQDbhhRVyZLBv9tVpQVwhoFfzAQs6tMiS9pa7l6TIvR-XgCuyhHet0WIWfZBdlY_ql8a4h8drI2aH2lPdOVimtBNZ8zKnAdzrXEJsG315N6ke0Al8t2-GiKci25GrpTECBfkLD5J81dpyUgrQPULS8RTHUPAr3eXmFKb_WQJcyDsRRij8ytejHdm9Eego1FhcS0n70DU-7zWDYDpnvfQGXf6BBEmkayNQolT5xQradrpwFWahJeDfiAx.jpeg',
-  'https://cdn.corner.inc/place-photo/AWn5SU7qJIxUbj7NlmYhWuQElMWkxm3UjqW0gzE-UgrlxikRbYCksQBZnio0CVKeZ5nNij3Uh0ANPJCBGD_WGg6ZaIxRv8OdQnH1A8BnaA2US9UkHO_QDmS-pnGIeKuVv5rjISiW_niV8upnOvYRMdCye8glqxxdEokQTkG2WzJY1NsnDvnywJMbO_2MO2mVREnNoShYiBlglF0B9iQugy54oYMaAVWIZswc-FR1YoCtWF6mMt0_q5U8QYUM7TTARoW1ED1XqYjCTKBv_eVt0gOji9gMKP1Y19FdysRjlBVqf89pvQ.jpeg',
-  'https://cdn.corner.inc/place-photo/AWn5SU4aAc_ccaShbQpDUNjhlwKjUY4uCaFnSYts37iQnkxtPg8tjq7e5mE_A90zyfkIva2Acqjwie1R7AZRdXsclfg72Y81FdDJivr7ENbdKFGI9-o_nUE9SzrAGV1dvS2wxx-kymxWfll8UPWnX5Np9pd6QRUUeCkaWKZUWp5RyYLgZoW3U6XHgluEKKHlXMFqBZ7zo9mkB6H-6HRwZg-oT5trTKbGErrTUQZcCHR3t0Dcd9TaOX5z-NIrECukS5c0QG2Iwpu1e4wdzLPMdAxbtIWBS-Fi914fFsfR5ivKm73CLg.jpeg'
-];
+/* If a public listing image disappears, retain a complete static design. */
+const fallbackImages = new Map([
+  ['.photo-card-main img', 'assets/exterior-placeholder.svg'],
+  ['.photo-card-small img', 'assets/food-placeholder.svg'],
+  ['.photo-card-wide img', 'assets/interior-placeholder.svg'],
+  ['.photo-card-tall img', 'assets/kiez-placeholder.svg']
+]);
 
-const photoSlots = [
-  ['.photo-card-main img', 0, 'Café Elsken in Berlin-Neukölln'],
-  ['.photo-card-small img', 1, 'Ein echter Einblick in Café Elsken'],
-  ['.photo-card-wide img', 2, 'Innenraum und Atmosphäre bei Elsken'],
-  ['.photo-card-tall img', 3, 'Café Elsken am Kiehlufer']
-];
-
-photoSlots.forEach(([selector, photoIndex, alt]) => {
-  const img = document.querySelector(selector);
-  if (!img) return;
-  const originalSrc = img.getAttribute('src');
-  img.referrerPolicy = 'no-referrer';
-  img.decoding = 'async';
-  img.alt = alt;
-  img.addEventListener('error', () => {
-    if (originalSrc) img.src = originalSrc;
-  }, { once: true });
-  img.src = elskenPhotos[photoIndex];
+fallbackImages.forEach((fallback, selector) => {
+  const image = document.querySelector(selector);
+  if (!image) return;
+  image.addEventListener('error', () => {
+    if (!image.dataset.fallbackApplied) {
+      image.dataset.fallbackApplied = 'true';
+      image.src = fallback;
+    }
+  });
 });
 
-const heroBadge = document.querySelector('.demo-badge');
-if (heroBadge) {
-  heroBadge.textContent = 'Real Elsken photos';
-  heroBadge.classList.add('real-photo-badge');
+/* Subtle depth on the real hero photographs. */
+const depthHost = document.querySelector('[data-depth-host]');
+if (depthHost && !reducedMotion && window.matchMedia('(pointer:fine)').matches) {
+  const cards = [...depthHost.querySelectorAll('[data-depth]')];
+  let frame = null;
+  let targetX = 0;
+  let targetY = 0;
+
+  const applyDepth = () => {
+    cards.forEach((card) => {
+      const depth = Number(card.dataset.depth || 1);
+      card.style.setProperty('--card-x', `${targetX * depth}px`);
+      card.style.setProperty('--card-y', `${targetY * depth}px`);
+    });
+    frame = null;
+  };
+
+  depthHost.addEventListener('pointermove', (event) => {
+    const rect = depthHost.getBoundingClientRect();
+    targetX = ((event.clientX - rect.left) / rect.width - 0.5) * 9;
+    targetY = ((event.clientY - rect.top) / rect.height - 0.5) * 7;
+    if (!frame) frame = requestAnimationFrame(applyDepth);
+  }, { passive: true });
+
+  depthHost.addEventListener('pointerleave', () => {
+    targetX = 0;
+    targetY = 0;
+    if (!frame) frame = requestAnimationFrame(applyDepth);
+  });
 }
 
-const prototypeNote = document.querySelector('.prototype-note');
-if (prototypeNote) {
-  prototypeNote.innerHTML = '<strong>Foto-Hinweis:</strong> Aktuell werden echte Elsken-Fotos aus einer öffentlichen Google-Maps-basierten Listing-Quelle angezeigt. Für den kommerziellen Launch sollten owner-freigegebene Originaldateien eingesetzt werden. <a href="IMAGE_RIGHTS.md">Quellen & Rechte</a>.';
+/* One scroll loop updates all non-essential section motion. */
+const parallaxPhotos = [...document.querySelectorAll('[data-scroll-depth]')];
+const menuRipple = document.querySelector('.menu-ripple');
+const kiezSection = document.querySelector('.kiez-section');
+const kiezOrbits = document.querySelector('.kiez-orbits');
+const finalCta = document.querySelector('.final-cta');
+const finalReflection = document.querySelector('.final-reflection');
+let scrollFrame = null;
+
+function normalizedSectionProgress(element) {
+  if (!element) return 0;
+  const rect = element.getBoundingClientRect();
+  const viewport = window.innerHeight || 1;
+  return Math.max(-1, Math.min(1, (viewport * 0.5 - (rect.top + rect.height * 0.5)) / viewport));
 }
 
-// Use the fifth real photo as a quiet photographic layer in the final CTA.
-const finalCtaArt = document.querySelector('.final-cta-art');
-if (finalCtaArt) {
-  finalCtaArt.style.setProperty('--elsken-photo', `url("${elskenPhotos[4]}")`);
-  finalCtaArt.classList.add('has-real-photo');
-}
-
-// Styling for the progressive real-photo and WebGL enhancements.
-const enhancementStyles = document.createElement('style');
-enhancementStyles.textContent = `
-  .hero-visual { isolation: isolate; }
-  .hero-visual .photo-card { z-index: 2; }
-  .real-photo-badge { background: var(--teal); }
-  .elsken-canal-canvas {
-    position: absolute;
-    inset: -8% -18% -6% -18%;
-    width: 136%;
-    height: 114%;
-    z-index: 0;
-    opacity: .42;
-    pointer-events: none;
-  }
-  .final-cta-art.has-real-photo::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(90deg, rgba(244,239,229,.94), rgba(244,239,229,.52)), var(--elsken-photo);
-    background-size: cover;
-    background-position: center;
-    filter: saturate(.82) contrast(.96);
-  }
-  .final-cta-art.has-real-photo .sun,
-  .final-cta-art.has-real-photo .canal-line { z-index: 2; }
-  @media (max-width: 760px) {
-    .elsken-canal-canvas { inset: -4% -10%; width: 120%; height: 108%; opacity: .28; }
-    .final-cta-art.has-real-photo::before {
-      background-image: linear-gradient(rgba(244,239,229,.78), rgba(244,239,229,.78)), var(--elsken-photo);
-    }
-  }
-`;
-document.head.appendChild(enhancementStyles);
-
-async function initCanalScene() {
+function updateSectionMotion() {
   if (reducedMotion) return;
 
-  const host = document.querySelector('.hero-visual');
-  if (!host || !('WebGLRenderingContext' in window)) return;
+  parallaxPhotos.forEach((figure) => {
+    const rect = figure.getBoundingClientRect();
+    const viewport = window.innerHeight || 1;
+    const centerDelta = (viewport * 0.5) - (rect.top + rect.height * 0.5);
+    const depth = Number(figure.dataset.scrollDepth || 0);
+    const shift = Math.max(-18, Math.min(18, centerDelta * depth * 0.12));
+    const image = figure.querySelector('img');
+    if (image) image.style.setProperty('--parallax-y', `${shift}px`);
+  });
+
+  if (menuRipple) {
+    const menu = menuRipple.closest('.menu-section');
+    menuRipple.style.setProperty('--menu-shift', `${normalizedSectionProgress(menu) * 34}px`);
+  }
+
+  if (kiezSection && kiezOrbits) {
+    const progress = normalizedSectionProgress(kiezSection);
+    kiezOrbits.style.setProperty('--orbit-x', `${progress * 18}px`);
+    kiezOrbits.style.setProperty('--orbit-y', `${progress * -24}px`);
+  }
+
+  if (finalCta && finalReflection) {
+    const progress = normalizedSectionProgress(finalCta);
+    finalReflection.style.setProperty('--reflection-y', `${progress * 22}px`);
+  }
+
+  scrollFrame = null;
+}
+
+if (!reducedMotion) {
+  window.addEventListener('scroll', () => {
+    if (!scrollFrame) scrollFrame = requestAnimationFrame(updateSectionMotion);
+  }, { passive: true });
+  window.addEventListener('resize', () => {
+    if (!scrollFrame) scrollFrame = requestAnimationFrame(updateSectionMotion);
+  }, { passive: true });
+  updateSectionMotion();
+}
+
+/*
+ * Three.js: one small shader-driven canal-light layer in the hero.
+ * It is decorative only. No content, navigation or CTA depends on WebGL.
+ */
+async function initCanalLight() {
+  if (reducedMotion) return;
+
+  const canvas = document.querySelector('#canal-canvas');
+  const hero = document.querySelector('.hero');
+  const host = document.querySelector('.hero-canal');
+  if (!canvas || !hero || !host || !('WebGLRenderingContext' in window)) return;
 
   let THREE;
   try {
     THREE = await import('https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js');
   } catch (error) {
-    console.info('Elsken: Three.js enhancement unavailable; static site remains fully usable.', error);
+    console.info('Elsken: WebGL enhancement unavailable; static canal treatment remains.', error);
     return;
   }
 
-  const canvas = document.createElement('canvas');
-  canvas.className = 'elsken-canal-canvas';
-  canvas.setAttribute('aria-hidden', 'true');
-  host.prepend(canvas);
-
   let renderer;
   try {
-    renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'low-power' });
+    renderer = new THREE.WebGLRenderer({
+      canvas,
+      alpha: true,
+      antialias: false,
+      powerPreference: 'low-power'
+    });
   } catch (error) {
-    canvas.remove();
     return;
   }
 
   renderer.setClearColor(0x000000, 0);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.4));
 
   const scene = new THREE.Scene();
-  const camera = new THREE.OrthographicCamera(-1.5, 1.5, 1.25, -1.25, 0.1, 10);
-  camera.position.z = 2;
+  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 2);
+  camera.position.z = 1;
 
-  const waves = [];
-  const palette = [0x276366, 0x276366, 0xc8543f];
+  const uniforms = {
+    uTime: { value: 0 },
+    uPointer: { value: new THREE.Vector2(0, 0) },
+    uScroll: { value: 0 },
+    uAspect: { value: 1 }
+  };
 
-  for (let lineIndex = 0; lineIndex < 3; lineIndex += 1) {
-    const count = 72;
-    const positions = new Float32Array(count * 3);
-    const baseY = -0.48 + lineIndex * 0.44;
+  const material = new THREE.ShaderMaterial({
+    transparent: true,
+    depthWrite: false,
+    depthTest: false,
+    uniforms,
+    vertexShader: `
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = vec4(position, 1.0);
+      }
+    `,
+    fragmentShader: `
+      precision mediump float;
+      varying vec2 vUv;
+      uniform float uTime;
+      uniform vec2 uPointer;
+      uniform float uScroll;
+      uniform float uAspect;
 
-    for (let i = 0; i < count; i += 1) {
-      const t = i / (count - 1);
-      positions[i * 3] = -1.65 + t * 3.3;
-      positions[i * 3 + 1] = baseY;
-      positions[i * 3 + 2] = 0;
-    }
+      float ribbon(float y, float center, float width) {
+        float d = abs(y - center);
+        return 1.0 - smoothstep(0.0, width, d);
+      }
 
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    const material = new THREE.LineBasicMaterial({
-      color: palette[lineIndex],
-      transparent: true,
-      opacity: lineIndex === 2 ? 0.18 : 0.28
-    });
-    const line = new THREE.Line(geometry, material);
-    scene.add(line);
-    waves.push({ line, baseY, phase: lineIndex * 1.7, speed: 0.42 + lineIndex * 0.08 });
-  }
+      void main() {
+        vec2 uv = vUv;
+        float x = (uv.x - 0.5) * mix(1.0, uAspect, 0.25);
+        float drift = uTime * 0.10;
+
+        float w1 = sin(x * 10.0 + drift * 3.2) * 0.030 + sin(x * 23.0 - drift) * 0.008;
+        float w2 = sin(x * 8.0 - drift * 2.3 + 1.8) * 0.038 + sin(x * 18.0 + drift) * 0.009;
+        float w3 = sin(x * 12.5 + drift * 1.7 + 4.0) * 0.022;
+
+        float y1 = 0.35 + w1 + uPointer.y * 0.016 + uScroll * 0.018;
+        float y2 = 0.55 + w2 - uPointer.x * 0.012 - uScroll * 0.012;
+        float y3 = 0.70 + w3 + uPointer.y * 0.008;
+
+        float a1 = ribbon(uv.y, y1, 0.012);
+        float a2 = ribbon(uv.y, y2, 0.009);
+        float a3 = ribbon(uv.y, y3, 0.006);
+        float glow = ribbon(uv.y, y1, 0.050) * 0.09 + ribbon(uv.y, y2, 0.044) * 0.07;
+
+        vec3 teal = vec3(0.153, 0.388, 0.400);
+        vec3 tomato = vec3(0.784, 0.329, 0.247);
+        vec3 warm = vec3(0.722, 0.537, 0.380);
+
+        vec3 color = teal * (a1 + glow) + warm * a2 + tomato * a3;
+        float alpha = clamp(a1 * 0.46 + a2 * 0.28 + a3 * 0.22 + glow, 0.0, 0.48);
+        alpha *= smoothstep(0.02, 0.18, uv.x) * smoothstep(0.98, 0.76, uv.x);
+
+        gl_FragColor = vec4(color, alpha);
+      }
+    `
+  });
+
+  const plane = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), material);
+  scene.add(plane);
 
   let active = true;
   let rafId = null;
-  const clock = new THREE.Clock();
+  let lastTime = performance.now();
+  let pointerX = 0;
+  let pointerY = 0;
+  let smoothX = 0;
+  let smoothY = 0;
 
   function resize() {
     const rect = host.getBoundingClientRect();
     renderer.setSize(Math.max(1, rect.width), Math.max(1, rect.height), false);
+    uniforms.uAspect.value = rect.width / Math.max(1, rect.height);
   }
 
-  function render() {
+  function updateScrollUniform() {
+    const rect = hero.getBoundingClientRect();
+    uniforms.uScroll.value = Math.max(-1, Math.min(1, -rect.top / Math.max(1, rect.height)));
+  }
+
+  hero.addEventListener('pointermove', (event) => {
+    const rect = hero.getBoundingClientRect();
+    pointerX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+    pointerY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+  }, { passive: true });
+
+  hero.addEventListener('pointerleave', () => {
+    pointerX = 0;
+    pointerY = 0;
+  });
+
+  window.addEventListener('scroll', updateScrollUniform, { passive: true });
+
+  function render(now) {
     if (!active || document.hidden) {
       rafId = null;
       return;
     }
 
-    const time = clock.getElapsedTime();
-    waves.forEach(({ line, baseY, phase, speed }, lineIndex) => {
-      const positions = line.geometry.attributes.position.array;
-      const count = positions.length / 3;
-      for (let i = 0; i < count; i += 1) {
-        const x = positions[i * 3];
-        positions[i * 3 + 1] = baseY
-          + Math.sin((x * 2.8) + (time * speed) + phase) * (0.055 + lineIndex * 0.008)
-          + Math.sin((x * 5.2) - (time * 0.22)) * 0.012;
-      }
-      line.geometry.attributes.position.needsUpdate = true;
-    });
+    const delta = Math.min(40, now - lastTime);
+    lastTime = now;
+    uniforms.uTime.value += delta / 1000;
+    smoothX += (pointerX - smoothX) * 0.035;
+    smoothY += (pointerY - smoothY) * 0.035;
+    uniforms.uPointer.value.set(smoothX, smoothY);
 
     renderer.render(scene, camera);
     rafId = requestAnimationFrame(render);
@@ -213,20 +298,25 @@ async function initCanalScene() {
 
   const visibilityObserver = new IntersectionObserver(([entry]) => {
     active = entry.isIntersecting;
-    if (active && !rafId) {
-      clock.getDelta();
+    if (active && !rafId && !document.hidden) {
+      lastTime = performance.now();
       rafId = requestAnimationFrame(render);
     }
-  }, { threshold: 0.03 });
+  }, { threshold: 0.02 });
 
-  visibilityObserver.observe(host);
-  window.addEventListener('resize', resize, { passive: true });
+  visibilityObserver.observe(hero);
   document.addEventListener('visibilitychange', () => {
-    if (!document.hidden && active && !rafId) rafId = requestAnimationFrame(render);
+    if (!document.hidden && active && !rafId) {
+      lastTime = performance.now();
+      rafId = requestAnimationFrame(render);
+    }
   });
 
+  window.addEventListener('resize', resize, { passive: true });
   resize();
-  render();
+  updateScrollUniform();
+  document.documentElement.classList.add('webgl-ready');
+  rafId = requestAnimationFrame(render);
 }
 
-initCanalScene();
+initCanalLight();
