@@ -35,6 +35,15 @@ document.querySelectorAll('.mobile-menu a[href^="#"]').forEach((link) => {
 });
 
 /* If a public listing image disappears, retain a complete static design. */
+function attachFallback(image, fallback) {
+  if (!image) return;
+  image.addEventListener('error', () => {
+    if (image.dataset.fallbackApplied) return;
+    image.dataset.fallbackApplied = 'true';
+    image.src = fallback;
+  });
+}
+
 const fallbackImages = new Map([
   ['.photo-card-main img', 'assets/exterior-placeholder.svg'],
   ['.photo-card-small img', 'assets/food-placeholder.svg'],
@@ -42,16 +51,13 @@ const fallbackImages = new Map([
   ['.photo-card-tall img', 'assets/kiez-placeholder.svg']
 ]);
 
-fallbackImages.forEach((fallback, selector) => {
-  const image = document.querySelector(selector);
-  if (!image) return;
-  image.addEventListener('error', () => {
-    if (!image.dataset.fallbackApplied) {
-      image.dataset.fallbackApplied = 'true';
-      image.src = fallback;
-    }
-  });
+fallbackImages.forEach((fallback, selector) => attachFallback(document.querySelector(selector), fallback));
+
+document.querySelectorAll('.gallery-frame img').forEach((image, index) => {
+  const options = ['assets/exterior-placeholder.svg', 'assets/food-placeholder.svg', 'assets/interior-placeholder.svg', 'assets/kiez-placeholder.svg'];
+  attachFallback(image, options[index % options.length]);
 });
+attachFallback(document.querySelector('.final-photo img'), 'assets/exterior-placeholder.svg');
 
 /* Subtle depth on the real hero photographs. */
 const depthHost = document.querySelector('[data-depth-host]');
@@ -164,12 +170,7 @@ async function initCanalLight() {
 
   let renderer;
   try {
-    renderer = new THREE.WebGLRenderer({
-      canvas,
-      alpha: true,
-      antialias: false,
-      powerPreference: 'low-power'
-    });
+    renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false, powerPreference: 'low-power' });
   } catch (error) {
     return;
   }
@@ -237,7 +238,7 @@ async function initCanalLight() {
 
         vec3 color = teal * (a1 + glow) + warm * a2 + tomato * a3;
         float alpha = clamp(a1 * 0.46 + a2 * 0.28 + a3 * 0.22 + glow, 0.0, 0.48);
-        alpha *= smoothstep(0.02, 0.18, uv.x) * smoothstep(0.98, 0.76, uv.x);
+        alpha *= smoothstep(0.02, 0.18, uv.x) * (1.0 - smoothstep(0.76, 0.98, uv.x));
 
         gl_FragColor = vec4(color, alpha);
       }
