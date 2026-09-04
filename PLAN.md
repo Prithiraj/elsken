@@ -1,63 +1,35 @@
 # Elsken — Website Design & Implementation Plan
 
-> Status: implemented as a reviewable static prototype on `feat/elsken-editorial-site`.
+> Status: **Canal Light v2 implemented on `feat/canal-light-v2` for review.**
 >
-> Evidence rule: no prices, policies, current owner names, individual menu items, reservations, delivery promises, or other operational claims are published unless supported by a reasonably current source. See [`RESEARCH.md`](RESEARCH.md) and [`IMAGE_RIGHTS.md`](IMAGE_RIGHTS.md).
+> Evidence rule: no prices, policies, current owner names, individual menu items, reservations, delivery promises, or other operational claims are published unless supported by reasonably current evidence. See [`RESEARCH.md`](RESEARCH.md) and [`IMAGE_RIGHTS.md`](IMAGE_RIGHTS.md).
 
 ## 1. Evidence baseline
 
-### Current facts used in the build
+Facts used in the build:
 
-- **Business:** Elsken / Café Elsken
+- **Business:** Elsken / Café Elsken.
 - **Address:** Kiehlufer 75, 12059 Berlin-Neukölln.
 - **Phone:** +49 30 28423798.
-- **Hours used:** Tuesday–Sunday 10:00–18:00; Monday closed. A Restaurant Guru listing updated in July 2026 reports these hours. The site explicitly recommends rechecking before travel because an older June 2025 Instagram post announced later weekend hours, so the evidence has changed over time.
-- **Official social positioning:** the indexed Instagram profile describes Elsken as a cozy café in Neukölln with homemade lunch, cakes, specialty coffee & drinks, and Saturday/Sunday breakfast and brunch.
-- **Coffee relationship:** Vote Coffee currently lists Elsken as a place to drink coffee and buy beans.
-- **Community/cultural evidence:** Café Elsken was a venue for the 2026 48 Stunden Neukölln photography programme. A local initiative also documented a 2026 Kiez conversation at Elsken.
-- **History:** hospitality press reported in January 2021 that Café Elsken had recently taken over the former Fishtank café premises. A local neighbourhood listing says it opened in November 2020. The current site therefore uses the careful phrasing “since winter 2020/21,” not an invented founding story.
-- **Social proof:** current researched directories report a Google rating around 4.7/5. The implementation uses the rating but not a hard-coded review count because counts change.
-- **Accessibility:** the 2026 48 Stunden Neukölln venue page lists barrier-free access and a barrier-free toilet for Café Elsken.
+- **Hours used:** Tuesday–Sunday 10:00–18:00; Monday closed, based on current researched listings. The page recommends rechecking before travel because historical sources differ.
+- **Offer positioning:** the indexed official Instagram describes homemade lunch, cakes, specialty coffee & drinks, plus Saturday/Sunday breakfast and brunch.
+- **Coffee relationship:** Vote Coffee lists Elsken as a place to drink coffee and buy beans.
+- **Community/cultural evidence:** Elsken was a 2026 48 Stunden Neukölln venue and hosted a documented Kiez conversation.
+- **History:** public sources place the café at Kiehlufer 75 since winter 2020/21.
+- **Social proof:** current researched directories report a Google rating around 4.7/5.
+- **Accessibility:** the 2026 festival venue page lists barrier-free access and a barrier-free toilet.
 
-### Sources
-
-- [Restaurant Guru — Elsken](https://de.restaurantguru.com/Cafe-Elsken-Berlin)
-- [Official Instagram profile — @cafeelsken](https://www.instagram.com/cafeelsken/)
-- [Official Facebook page — Café Elsken](https://www.facebook.com/Cafeelsken/)
-- [Vote Coffee — Buy Beans / Drink Coffee](https://vote-coffee.com/pages/buy-beans-drink-coffee)
-- [48 Stunden Neukölln — Fensterblicke at Café Elsken](https://48-stunden-neukoelln.de/de/programm/fensterblicke)
-- [Meininger/fizzz — Top 5 Openings aus Berlin, 11 Jan 2021](https://www.meininger.de/gastronomie/top-5-openings-aus-berlin)
-- [nebenan.de — Café Elsken historical listing](https://nebenan.de/places/businesses/52461)
-
-### Intentionally excluded until owner confirmation
-
-- Current owner/team identity.
-- Current complete menu and prices.
-- Reservations.
-- Delivery.
-- Pet policy.
-- Alcohol range.
-- Seating capacity.
-- Current email address.
-- Any permanent claim about individual dishes such as shakshuka; those appear in reviews/directories but are not treated as a guaranteed current menu.
+Intentionally excluded until owner confirmation: current ownership/team details, complete menu/prices, reservations, delivery, pet policy, alcohol range, seating capacity, and current email address.
 
 ## 2. Audience
 
-### Primary
+Primary: local Neukölln residents and nearby workers deciding where to have coffee, lunch, cake, breakfast, or brunch.
 
-People living or working in Neukölln who are deciding where to have coffee, lunch, breakfast/brunch, or cake. Their practical questions are: what kind of place is this, what does it serve, is it open, and how do I get there?
+Secondary: visitors discovering the Kiehlufer area through Google Maps, Instagram, recommendations, or walking routes.
 
-### Secondary
+Tertiary: people attracted to the café’s documented neighbourhood/cultural role.
 
-Visitors walking around Neukölln/Kiehlufer who arrive through Google Maps, Instagram, recommendations, or local discovery.
-
-### Tertiary
-
-People drawn to the café’s documented neighbourhood/cultural role.
-
-### Language
-
-German-first. An English version is a sensible later extension if the business can maintain two accurate content sets.
+German-first. English can be added later if Elsken can maintain both versions accurately.
 
 ## 3. Conversion goals
 
@@ -67,74 +39,62 @@ Primary actions:
 2. **Understand the current offer**
 3. **Call Elsken**
 
-Secondary actions:
+Secondary actions: visit Instagram, check hours, understand atmosphere/location.
 
-- Visit Instagram for current specials/menu changes.
-- Check hours.
-- Understand the atmosphere and location.
-
-No booking funnel is shown because reservations are not verified.
+There is no booking funnel because reservations are not verified.
 
 ## 4. Creative direction
 
-### Warm Kiez Editorial
+### Warm Kiez Editorial + Canal Light
 
-Evidence points to a small, cozy, personal neighbourhood café rather than a luxury restaurant or scalable brunch brand. The design therefore combines:
+The site should feel warm, relaxed, personal, cultured, slightly playful, and unpretentious.
+
+Evidence-led visual cues:
 
 - editorial typography;
-- tactile warm surfaces;
-- teal storefront-inspired structure;
+- tactile warm paper/cream surfaces;
+- teal storefront/canal-inspired structure;
 - restrained tomato/terracotta accents;
-- asymmetrical “printed photo” compositions;
-- canal/Kiehlufer geometry;
-- generous whitespace and calm motion.
+- asymmetrical real-photo compositions;
+- slow canal/reflection geometry;
+- generous whitespace and calm interaction.
 
-The tone is **warm, relaxed, personal, cultured, slightly playful, and unpretentious**.
-
-Avoid:
-
-- generic Scandinavian specialty-coffee minimalism;
-- glossy luxury restaurant styling;
-- fake handwritten scripts everywhere;
-- coffee-bean clichés;
-- high-energy game-like interactions.
+Avoid glossy luxury styling, generic specialty-coffee minimalism, fake handwritten clichés, and game-like interaction.
 
 ## 5. Color system
 
 | Token | Value | Purpose |
 | --- | --- | --- |
-| Ink | `#20201D` | Main text / dark sections |
+| Ink | `#20201D` | Main text / dark Kiez section |
 | Warm Paper | `#F4EFE5` | Primary page background |
-| Soft Cream | `#FBF8F2` | Cards / light-on-dark contrast |
-| Kiehlufer Teal | `#276366` | Brand and structural accent |
+| Soft Cream | `#FBF8F2` | Cards / light contrast |
+| Kiehlufer Teal | `#276366` | Identity / canal light |
 | Deep Teal | `#173F42` | Food/menu section |
-| Tomato | `#C8543F` | CTA and editorial accent |
+| Tomato | `#C8543F` | CTA / editorial accent |
 | Toast | `#B88961` | Supporting warmth |
 
-These are proposed design colors, not claimed existing brand standards.
+These are proposed design colors, not claimed existing Elsken brand standards.
 
 ## 6. Typography
 
-- **Newsreader Variable** — editorial display, hero, large statements.
+- **Newsreader Variable** — hero, section headings, large editorial statements.
 - **IBM Plex Sans** — navigation, utility copy, hours, metadata, buttons.
 
-Both are loaded from Google Fonts in the prototype. For a production privacy/performance pass, self-host licensed WOFF2 subsets if desired.
+The prototype uses Google Fonts. A production privacy/performance pass can self-host properly licensed WOFF2 subsets.
 
 ## 7. Image strategy
 
-The web research found real Elsken photography on restaurant directories, press coverage, Google-sourced review imagery, and social accounts. Those images are useful as visual research but their commercial web rights are not proven by public availability.
+The v2 prototype uses **real Elsken photography** surfaced through Corner’s Elsken listing, where the images are labelled “photo via Google Maps.” This makes the prototype specific and realistic, but it does **not** establish commercial reuse rights.
 
-Therefore the implementation deliberately ships **stylised SVG demo placeholders** rather than silently copying third-party photos. Each placeholder is visibly marked for replacement.
+Production priority remains:
 
-Production priority:
+1. owner-approved exterior/Kiehlufer image;
+2. current food/menu photography;
+3. interior/counter/details;
+4. staff/process with permission;
+5. canal/Kiez context.
 
-1. Exterior + Kiehlufer context.
-2. Real current food/menu.
-3. Interior/counter/details.
-4. Staff/process with permission.
-5. Canal/Kiez context.
-
-See [`IMAGE_RIGHTS.md`](IMAGE_RIGHTS.md) for the source audit and replacement checklist.
+Remote listing photos must be replaced by owner-approved originals before treating the site as commercially cleared. SVG artwork remains in `/assets/` as an error fallback for the main photo slots.
 
 ## 8. Information architecture
 
@@ -144,224 +104,195 @@ Single-page structure:
 2. Hero
 3. Business value proposition
 4. Food & drink offer
-5. Space/atmosphere
-6. Kiez/community story
-7. Location/contact/hours
-8. Strong final directions CTA
-9. Footer/socials
+5. Space / atmosphere
+6. Real-photo gallery
+7. Kiez/community story
+8. Location/contact/hours
+9. Strong final directions CTA
+10. Footer/socials
 
-A standalone menu route should only be added once Elsken provides a current source-of-truth menu.
+A standalone menu route should only be added once Elsken supplies a current source-of-truth menu.
 
 ## 9. Section-by-section layout
 
 ### Header
 
-Compact logo/wordmark, anchor navigation, Instagram, and a clear route CTA. Native `<details>` powers mobile navigation so it still works without JavaScript.
+Sticky compact wordmark, anchor navigation, Instagram, and a clear Route CTA. Native `<details>` powers mobile navigation.
 
 ### Hero
 
-- Kiehlufer location eyebrow.
-- Headline: “Ein kleines Café. Mit viel Kiez.”
-- Evidence-backed summary of lunch, cakes, specialty coffee/drinks, weekend breakfast/brunch.
-- Directions and offer CTAs.
+- “Ein kleines Café. Mit viel Kiez.”
+- Evidence-backed offer summary.
+- Directions and offer actions.
 - Current researched hours above the fold.
-- Layered photography slots, currently marked demo-only.
+- Two real Elsken photographs on shallow depth layers.
+- Decorative canal-light WebGL plane behind the photography.
 
 ### Value proposition
 
-Three concrete evidence-led notes instead of generic “quality/passion/community” cards:
-
-- homemade lunch/cakes;
-- specialty coffee / Vote Coffee relationship;
-- documented neighbourhood/cultural participation.
+Three concrete notes: homemade offer, specialty coffee/Vote Coffee relationship, and documented neighbourhood participation. A small line-reveal gives the cards rhythm without becoming a carousel.
 
 ### Food & drink
 
-Category-led content only:
-
-- homemade lunch;
-- cakes;
-- specialty coffee & drinks;
-- Saturday/Sunday breakfast & brunch.
-
-No prices or invented dish names.
+Category-led content only: homemade lunch, cakes, specialty coffee/drinks, Saturday/Sunday breakfast & brunch. A scroll-responsive waterline motif passes behind the dark section.
 
 ### Space & atmosphere
 
-Asymmetric visual composition with a concise explanation of why the design emphasizes warmth, music, personal service, and a lived-in feel. Review text is not copied verbatim as promotional testimony.
+Asymmetric real-photo layout with only enough copy to frame the experience. Images move a few pixels with scroll to create depth.
+
+### Gallery
+
+An editorial four-image sequence using real Elsken photography. Desktop is intentionally irregular; mobile becomes a scroll-snap gallery. No heavy lightbox dependency.
 
 ### Kiez
 
-A dark editorial section referencing documented 2026 cultural/neighbourhood participation.
+Dark editorial section referencing documented 2026 cultural/neighbourhood participation. Large concentric canal/orbit lines move slowly with scroll.
 
 ### Visit
 
-Large practical block with address, phone, hours, directions, and the current accessibility note from the 2026 venue listing.
+Address, phone, hours, directions, and current accessibility note. Motion is deliberately minimal here because this is a utility/conversion section.
 
 ### Final CTA
 
-“Bis gleich am Wasser.” with prominent directions and Instagram actions. Decorative canal geometry is CSS-only and does not block content.
+Real Elsken photograph, warm-paper wash, “Bis gleich am Wasser,” Route and Instagram actions, and a final subtle reflected-water geometry.
 
 ## 10. Three.js / animation plan
 
-**No Three.js.** There is no business story that benefits from 3D/WebGL and it would add weight and distraction.
+Three.js is used **once**, in the hero, because the Kiehlufer/canal setting provides a real narrative reason for it.
 
-Motion is limited to progressive-reveal transitions using `IntersectionObserver`. With JavaScript disabled, content is visible. With `prefers-reduced-motion: reduce`, transforms and smooth scrolling are disabled.
+Implementation:
+
+- one orthographic camera;
+- one full-plane shader material;
+- procedural sine-based canal-light ribbons;
+- subtle pointer influence;
+- small scroll influence;
+- low-power renderer;
+- device pixel ratio capped at 1.4;
+- renderer pauses when the hero is off-screen or the tab is hidden;
+- dynamically imported from CDN only when JavaScript, WebGL, and normal-motion preferences are available.
+
+Everything else uses lightweight DOM/CSS motion rather than extra WebGL scenes.
+
+No 3D objects, camera fly-throughs, particles, spinning logos, or game-like controls.
 
 ## 11. Responsive behavior
 
 ### Mobile first
 
-The fixed bottom action bar prioritizes:
-
-- Route
-- Offer
-- Call
+Persistent bottom actions: Route / Angebot / Anrufen.
 
 ### Small screens
 
-- One-column hero and content.
-- Large but bounded editorial typography.
-- Native mobile menu.
-- No layout-critical overlapping decorations.
-- Photo placeholders remain readable and labelled.
+- one-column hero/content;
+- bounded editorial typography;
+- native mobile menu;
+- hero photographs remain layered but avoid clipping;
+- gallery becomes horizontal scroll-snap;
+- Three.js remains decorative and lower-opacity.
 
 ### Tablet
 
-- Two-column visual groups where useful.
-- Menu and Kiez sections collapse to one column earlier than desktop.
+Two-column visual groups where useful; menu/Kiez collapse earlier than desktop.
 
 ### Desktop
 
-- Asymmetrical editorial compositions.
-- Large typographic scale.
-- Maximum content width around 1240px.
+Asymmetrical editorial grid, large typographic scale, shallow pointer depth in the hero, maximum content width around 1240px.
 
 ## 12. Accessibility
 
-Target: WCAG 2.2 AA.
-
-Implemented/required:
+Target WCAG 2.2 AA.
 
 - semantic `header`, `nav`, `main`, `section`, `footer`;
 - one logical `h1`;
 - skip link;
 - visible `:focus-visible` state;
 - keyboard-operable native mobile menu;
-- 44px+ primary interactive targets;
-- meaningful link text;
-- `tel:` phone link;
-- alt text explicitly describing placeholder status;
+- 44px+ primary touch targets;
+- meaningful link text and `tel:` link;
+- descriptive alt text for real business photography;
 - no color-only meaning;
-- no essential content dependent on JavaScript;
-- reduced-motion handling;
-- no text embedded in production photography (placeholder labels are temporary prototype disclosures).
+- no essential content dependent on JavaScript or WebGL;
+- `prefers-reduced-motion` disables WebGL motion, parallax and transitions;
+- decorative canvas is `aria-hidden` by context and receives no interaction.
 
 ## 13. Performance
 
-Current build has no framework/runtime dependency.
+Core HTML/CSS remains framework-free. Three.js is enhancement-only and dynamically loaded.
 
-Production image requirements once real photography is supplied:
+Implemented safeguards:
 
-- AVIF + WebP where practical;
-- responsive `srcset`;
-- fixed width/height to prevent CLS;
-- hero not lazy loaded;
-- below-fold photography lazy loaded;
-- 1200×630 licensed Open Graph image;
-- keep JavaScript enhancement-only.
+- hero image is eager/high priority;
+- below-fold photos are lazy loaded;
+- `decoding="async"` on remote photography;
+- preconnect to the remote image host;
+- Three.js loaded only after the page script runs and skipped for reduced motion/WebGL failure;
+- pixel ratio capped;
+- WebGL rendering pauses off-screen;
+- scroll effects share one `requestAnimationFrame` loop.
 
-Core Web Vitals targets:
+Production image requirements once originals are supplied: local AVIF/WebP, responsive `srcset`, fixed dimensions, and a licensed 1200×630 Open Graph crop.
 
-- LCP ≤ 2.5s
-- CLS ≤ 0.1
-- INP ≤ 200ms
+Targets: LCP ≤2.5s, CLS ≤0.1, INP ≤200ms.
 
 ## 14. SEO / local discovery
 
-Implemented title:
+The prototype includes the evidence-backed title, description, and `CafeOrCoffeeShop` JSON-LD.
 
-> Elsken | Café, Frühstück & Lunch in Berlin-Neukölln
+Because this GitHub Pages version is an **unofficial concept**, it currently uses `noindex,nofollow` to avoid competing with or impersonating the business in search. Remove that only after owner approval and migration to the official domain.
 
-Implemented description summarizes the address and verified offer/hours without fabricated menu data.
-
-JSON-LD uses `CafeOrCoffeeShop` with:
-
-- name;
-- URL;
-- phone;
-- postal address;
-- opening hours;
-- Instagram/Facebook `sameAs` links.
-
-Not added without owner confirmation:
-
-- `priceRange`;
-- reservations;
-- delivery;
-- aggregate rating schema;
-- cuisine classifications;
-- review objects.
-
-Local SEO priority is consistent NAP data across the new site, Google Business Profile, Instagram, Facebook, and directories.
+Do not add unverified `priceRange`, reservation, delivery, aggregate-rating schema, cuisine classifications, or review objects.
 
 ## 15. Rights/licensing notes
 
-Publicly visible does not equal commercially licensed.
+Public availability does not equal commercial licensing.
 
 Production-safe priority:
 
-1. New photography commissioned by Elsken.
-2. Existing originals that Elsken owns and can authorize for web use.
-3. Photographer-owned images with an explicit commercial web license.
+1. new photography commissioned by Elsken;
+2. existing originals Elsken owns and can authorize;
+3. photographer-owned images with an explicit commercial web license.
 
-Do not automatically copy:
-
-- Google review photos;
-- Restaurant Guru photos;
-- customer Instagram posts;
-- festival photographs;
-- press photographs.
-
-The 2021 Meininger article credits its café image to “Café Elsken,” making it a promising original to request from the business, but the published press copy itself should not simply be scraped.
+The currently displayed Google-Maps-based listing photos are prototype assets only. See `IMAGE_RIGHTS.md`.
 
 ## 16. Implementation sequence
 
-1. Research current public facts.
-2. Record evidence/conflicts in `RESEARCH.md`.
-3. Establish image-rights policy.
-4. Build semantic HTML without framework dependency.
-5. Build responsive editorial design system.
-6. Add native navigation and progressive enhancement.
-7. Add metadata and JSON-LD.
-8. Add explicit image placeholders rather than unlicensed photos.
-9. QA links/content/accessibility.
-10. Before commercial launch: owner verification + licensed real photography + current menu.
+1. Research and record evidence.
+2. Establish image-rights policy.
+3. Build semantic static site.
+4. Build warm editorial design system.
+5. Insert real prototype photography with rights disclosure and fallback handling.
+6. Rebuild hero around one lightweight canal-light shader.
+7. Add section-specific motion: value stagger, menu waterline, photo depth, Kiez orbits, CTA reflections.
+8. Add gallery.
+9. Add reduced-motion, visibility pausing and responsive behavior.
+10. Keep prototype `noindex` until business approval.
+11. Before commercial launch: owner verification, owner-approved photography, current menu, official domain and final QA.
 
 ## 17. Acceptance criteria
 
 - [x] Design feels specific to Elsken/Kiehlufer rather than a generic café template.
-- [x] No invented prices.
-- [x] No invented reservation or delivery promise.
-- [x] No unsupported current owner claim.
-- [x] Current researched address, phone and hours are centralized in the page.
+- [x] Real Elsken photography is visible in the prototype.
+- [x] Prototype photo-rights status is explicitly documented.
+- [x] No invented prices, reservations, delivery or current-owner claims.
 - [x] Directions and phone are one tap away on mobile.
 - [x] Semantic HTML and keyboard navigation.
 - [x] Reduced-motion behavior.
-- [x] Site remains usable without JavaScript.
+- [x] Site remains usable without JavaScript/WebGL.
+- [x] One restrained Three.js treatment has a clear Kiehlufer/canal purpose.
+- [x] WebGL pauses off-screen and uses a capped pixel ratio.
+- [x] Gallery added without a heavy dependency.
 - [x] `CafeOrCoffeeShop` JSON-LD included.
-- [x] SEO title/meta and Open Graph base metadata included.
-- [x] No unnecessary framework or Three.js.
-- [x] Third-party photography is **not** silently shipped as production media.
-- [ ] Replace demo SVGs with licensed real Elsken photography before commercial launch.
+- [x] Unofficial GitHub prototype is `noindex,nofollow`.
+- [ ] Replace public-listing photography with owner-approved originals before commercial launch.
 - [ ] Add licensed 1200×630 Open Graph image.
 - [ ] Obtain current authoritative menu and decide whether to add prices/items.
 - [ ] Reverify hours and rating immediately before launch.
 - [ ] Confirm current ownership/team story if an About narrative is desired.
-- [ ] Run final Lighthouse/axe/browser QA in the production hosting environment.
+- [ ] Run final Lighthouse/axe/browser QA on the official production host.
 
 ## Design thesis
 
-> **A little piece of the Kiez on the Kiehlufer.**
+> **A little piece of the Kiez on the Kiehlufer — with canal light moving quietly through it.**
 
-The website should not claim that Elsken is bigger, more premium, or more elaborate than nearby cafés. The evidence supports the opposite competitive strength: **small scale, human atmosphere, homemade character, specialty coffee, Kiehlufer context, and a real relationship with the neighbourhood.**
+The website should not claim Elsken is bigger, more premium or more elaborate than nearby cafés. Its strongest evidence-backed qualities remain **small scale, human atmosphere, homemade character, specialty coffee, Kiehlufer context, and a real relationship with the neighbourhood.**

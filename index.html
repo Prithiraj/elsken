@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Elsken | Café, Frühstück & Lunch in Berlin-Neukölln</title>
   <meta name="description" content="Elsken am Kiehlufer 75 in Berlin-Neukölln. Kleines Kiezcafé für hausgemachten Lunch, Kuchen, Specialty Coffee sowie Frühstück und Brunch am Wochenende. Dienstag bis Sonntag, 10–18 Uhr.">
+  <meta name="robots" content="noindex,nofollow">
   <link rel="canonical" href="https://cafeelsken.de/">
   <meta name="theme-color" content="#f4efe5">
 
@@ -13,10 +14,10 @@
   <meta property="og:title" content="Elsken | Kiezcafé am Kiehlufer">
   <meta property="og:description" content="Hausgemachter Lunch, Kuchen, Specialty Coffee sowie Frühstück und Brunch am Wochenende in Berlin-Neukölln.">
   <meta property="og:url" content="https://cafeelsken.de/">
-  <!-- Add a licensed 1200×630 Elsken image before commercial launch. See IMAGE_RIGHTS.md. -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.corner.inc" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
@@ -47,7 +48,7 @@
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-  <header class="site-header" aria-label="Hauptnavigation">
+  <header class="site-header" data-header aria-label="Hauptnavigation">
     <a class="brand" href="#top" aria-label="Elsken – Startseite">
       <span class="brand-mark">E</span>
       <span class="brand-name">Elsken</span>
@@ -55,6 +56,7 @@
 
     <nav class="desktop-nav" aria-label="Seitennavigation">
       <a href="#essen">Essen & Trinken</a>
+      <a href="#raum">Raum</a>
       <a href="#kiez">Kiez</a>
       <a href="#besuch">Besuch</a>
       <a href="https://www.instagram.com/cafeelsken/" target="_blank" rel="noopener">Instagram ↗</a>
@@ -66,6 +68,7 @@
       <summary aria-label="Menü öffnen">Menü</summary>
       <nav aria-label="Mobile Navigation">
         <a href="#essen">Essen & Trinken</a>
+        <a href="#raum">Raum</a>
         <a href="#kiez">Kiez</a>
         <a href="#besuch">Besuch</a>
         <a href="https://www.instagram.com/cafeelsken/" target="_blank" rel="noopener">Instagram ↗</a>
@@ -74,7 +77,13 @@
   </header>
 
   <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
+    <section class="hero" id="top" aria-labelledby="hero-title" data-motion-section="hero">
+      <div class="hero-canal" aria-hidden="true">
+        <canvas id="canal-canvas" class="canal-canvas"></canvas>
+        <span class="canal-fallback canal-fallback-a"></span>
+        <span class="canal-fallback canal-fallback-b"></span>
+      </div>
+
       <div class="hero-copy reveal">
         <p class="eyebrow">Kiehlufer 75 · Berlin-Neukölln</p>
         <h1 id="hero-title">Ein kleines Café.<br><em>Mit viel Kiez.</em></h1>
@@ -89,16 +98,16 @@
         </div>
       </div>
 
-      <div class="hero-visual reveal" aria-label="Fotografie-Platzhalter für Elsken">
-        <figure class="photo-card photo-card-main">
-          <img src="assets/exterior-placeholder.svg" width="960" height="1120" alt="Demo-Platzhalter: Außenansicht des Café Elsken am Kiehlufer; vor Launch durch ein lizenziertes Originalfoto ersetzen">
-          <figcaption><span>01</span> Kiehlufer / Außen</figcaption>
+      <div class="hero-visual reveal" data-depth-host>
+        <figure class="photo-card photo-card-main" data-depth="0.85">
+          <img src="https://cdn.corner.inc/place-photo/AWn5SU5LLQc_n8c54yxzO5bMxW8gQ22KfMAPeRUUsFHCNAmzMCJPDIQjRiyd4_-xXaH7emtRtaxClRJFWEdNP4KytJiAYqke-Zxx18uHYzXN18UF3LJOI9I0NZRZcl0xBxCOw82sFKQ-Xn8NX-HhCQhK7eFSbBTnji5OL3D_uUTalskN-jo4udxYJz-flSJMST8ZvndE3AqqXsmLUhOeImRqfkR2clpKTLweh9jvF1kUAJ4DOT8w7ouHeBFrfLwWqWlli0nimZDQv0llYw9TEgvMoHSGOosCeUYeDUhO2OBDepYGesF7vQGb_SMtnOJwmn5HbzA-vdc0Jn8Z0H4vFXpJBP2IRQx-3tM4jVUXK_vfgqR62wLZg8RwPr5UDI-G-7W-G5Tt4-rpekNl4KAyCitZ3RHmwwyE46srQinduxq0ycrzUy5s.jpeg" width="960" height="1120" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" alt="Café Elsken in Berlin-Neukölln">
+          <figcaption><span>01</span> Kiehlufer / Elsken</figcaption>
         </figure>
-        <figure class="photo-card photo-card-small">
-          <img src="assets/food-placeholder.svg" width="720" height="720" alt="Demo-Platzhalter: Essen bei Elsken; vor Launch durch ein lizenziertes Originalfoto ersetzen">
-          <figcaption><span>02</span> Auf dem Tisch</figcaption>
+        <figure class="photo-card photo-card-small" data-depth="1.2">
+          <img src="https://cdn.corner.inc/place-photo/AWn5SU7vPoFmHDgtsQVjys8nlsiF_eyxpEc_ydWanYoKd1Ei_wUhvnEd9lPdM70ouGbJ7iJkN8cqFhcGdtDECPkGe-0FNutQDapcHDftuMcr5vxLFQFi62dQUbQWSM6M4YGjL7vrUbvkyGULpfLGBIj3Iyw9v1Nf8jeEKiFS3ZIMTR531RVMyr9Hdo1rquZSQkEtr-228y7mFQYdqI729J_zFfwH-Jo24XVyCNGLnhvdJN2ExcGTMwZpABUzyTV6x2dvymBu9mGxMne4_U2jdJONFOFfAGi4BFIZsjw5qWKbdG92jw.jpeg" width="720" height="720" decoding="async" referrerpolicy="no-referrer" alt="Ein echter Einblick in Café Elsken">
+          <figcaption><span>02</span> Im Café</figcaption>
         </figure>
-        <span class="demo-badge">Demo imagery · replace before launch</span>
+        <span class="photo-source-badge">Real Elsken photography</span>
       </div>
     </section>
 
@@ -112,7 +121,7 @@
       </div>
     </section>
 
-    <section class="intro section-shell" aria-labelledby="intro-title">
+    <section class="intro section-shell" aria-labelledby="intro-title" data-motion-section="intro">
       <p class="section-index">01 / Warum Elsken</p>
       <div class="intro-grid">
         <h2 id="intro-title" class="display-heading reveal">Mehr <em>Kiez</em><br>als Konzept.</h2>
@@ -122,18 +131,18 @@
         </div>
       </div>
 
-      <div class="value-notes" role="list" aria-label="Besondere Merkmale">
-        <article role="listitem" class="note-card reveal">
+      <div class="value-notes" role="list">
+        <article role="listitem" class="note-card reveal" style="--stagger:0">
           <span class="note-number">A</span>
           <h3>Hausgemacht</h3>
           <p>Der offizielle Instagram-Auftritt nennt hausgemachten Lunch und Kuchen als Kern des Angebots.</p>
         </article>
-        <article role="listitem" class="note-card reveal">
+        <article role="listitem" class="note-card reveal" style="--stagger:1">
           <span class="note-number">B</span>
           <h3>Specialty Coffee</h3>
-          <p>Elsken listet Specialty Coffee selbst als Angebot; Vote Coffee führt Elsken aktuell als Ort zum Kaffee trinken und Bohnen kaufen.</p>
+          <p>Elsken listet Specialty Coffee selbst als Angebot; Vote Coffee führt Elsken als Ort zum Kaffee trinken und Bohnen kaufen.</p>
         </article>
-        <article role="listitem" class="note-card reveal">
+        <article role="listitem" class="note-card reveal" style="--stagger:2">
           <span class="note-number">C</span>
           <h3>Nachbarschaft</h3>
           <p>Das Café war 2026 Veranstaltungsort bei 48 Stunden Neukölln – ein belegbarer kultureller Anker im Kiez.</p>
@@ -141,8 +150,9 @@
       </div>
     </section>
 
-    <section class="menu-section" id="essen" aria-labelledby="menu-title">
-      <div class="section-shell">
+    <section class="menu-section" id="essen" aria-labelledby="menu-title" data-motion-section="menu">
+      <div class="menu-ripple" aria-hidden="true"></div>
+      <div class="section-shell menu-shell">
         <p class="section-index light">02 / Essen & Trinken</p>
         <div class="menu-heading-row">
           <h2 id="menu-title" class="display-heading light reveal">Was auf den<br><em>Tisch</em> kommt.</h2>
@@ -150,67 +160,69 @@
         </div>
 
         <div class="menu-list" role="list">
-          <article class="menu-item reveal" role="listitem">
-            <span class="menu-no">01</span>
-            <div><h3>Hausgemachter Lunch</h3><p>Unter der Woche und am Wochenende – aktuelle Tagesgerichte bitte vor Ort oder auf Instagram prüfen.</p></div>
-            <span class="menu-symbol" aria-hidden="true">↗</span>
-          </article>
-          <article class="menu-item reveal" role="listitem">
-            <span class="menu-no">02</span>
-            <div><h3>Kuchen</h3><p>Von Elsken selbst als Teil des Angebots genannt; konkrete Sorten wechseln und werden hier bewusst nicht erfunden.</p></div>
-            <span class="menu-symbol" aria-hidden="true">○</span>
-          </article>
-          <article class="menu-item reveal" role="listitem">
-            <span class="menu-no">03</span>
-            <div><h3>Specialty Coffee & Drinks</h3><p>Vote Coffee führt Elsken als Partner zum Kaffee trinken und Bohnen kaufen.</p></div>
-            <span class="menu-symbol" aria-hidden="true">☕</span>
-          </article>
-          <article class="menu-item reveal" role="listitem">
-            <span class="menu-no">04</span>
-            <div><h3>Frühstück & Brunch</h3><p>Der offizielle Instagram-Auftritt nennt Frühstück und Brunch für Samstag und Sonntag.</p></div>
-            <span class="menu-symbol" aria-hidden="true">☀</span>
-          </article>
+          <article class="menu-item reveal" role="listitem"><span class="menu-no">01</span><div><h3>Hausgemachter Lunch</h3><p>Aktuelle Tagesgerichte bitte vor Ort oder auf Instagram prüfen.</p></div><span class="menu-symbol" aria-hidden="true">↗</span></article>
+          <article class="menu-item reveal" role="listitem"><span class="menu-no">02</span><div><h3>Kuchen</h3><p>Von Elsken selbst als Teil des Angebots genannt; konkrete Sorten wechseln.</p></div><span class="menu-symbol" aria-hidden="true">○</span></article>
+          <article class="menu-item reveal" role="listitem"><span class="menu-no">03</span><div><h3>Specialty Coffee & Drinks</h3><p>Vote Coffee führt Elsken als Partner zum Kaffee trinken und Bohnen kaufen.</p></div><span class="menu-symbol" aria-hidden="true">☕</span></article>
+          <article class="menu-item reveal" role="listitem"><span class="menu-no">04</span><div><h3>Frühstück & Brunch</h3><p>Der offizielle Instagram-Auftritt nennt Frühstück und Brunch für Samstag und Sonntag.</p></div><span class="menu-symbol" aria-hidden="true">☀</span></article>
         </div>
 
         <div class="menu-foot">
           <a class="button button-cream" href="https://www.instagram.com/cafeelsken/" target="_blank" rel="noopener">Aktuelles auf Instagram ↗</a>
-          <p>Hinweis: Preise und einzelne Gerichte werden erst ergänzt, wenn eine aktuelle Speisekarte vom Betrieb vorliegt.</p>
+          <p>Preise und einzelne Gerichte werden erst ergänzt, wenn eine aktuelle Speisekarte vom Betrieb vorliegt.</p>
         </div>
       </div>
     </section>
 
-    <section class="space-section section-shell" aria-labelledby="space-title">
+    <section class="space-section section-shell" id="raum" aria-labelledby="space-title" data-motion-section="space">
       <p class="section-index">03 / Raum & Atmosphäre</p>
       <div class="space-grid">
         <div class="space-copy reveal">
           <h2 id="space-title" class="display-heading">Komm rein.<br><em>Bleib ein bisschen.</em></h2>
-          <p>Öffentliche Bewertungen wiederholen dieselben Motive: freundlicher Service, gemütliche Atmosphäre, Musik und ein persönliches Gefühl. Statt diese Stimmen als Werbezitate zu kopieren, übersetzt die Gestaltung sie in Rhythmus, Materialität und Ruhe.</p>
+          <p>Öffentliche Bewertungen wiederholen dieselben Motive: freundlicher Service, gemütliche Atmosphäre, Musik und ein persönliches Gefühl. Die Gestaltung lässt deshalb Bilder und Ruhe arbeiten, statt den Raum mit Werbesprache zu überladen.</p>
         </div>
-        <figure class="photo-card photo-card-wide reveal">
-          <img src="assets/interior-placeholder.svg" width="1200" height="820" loading="lazy" alt="Demo-Platzhalter: Innenraum von Elsken; vor Launch durch ein lizenziertes Originalfoto ersetzen">
+        <figure class="photo-card photo-card-wide reveal depth-photo" data-scroll-depth="0.10">
+          <img src="https://cdn.corner.inc/place-photo/AWn5SU6fiPuYzILhXTq41ALvkxFw3dAfsQHdABqKJV7xArWcqNbfK9U2IIY7A8NfOqhY1MKh_jLvQnM2KQegxjQkg-nNnCMNNscD-uPYYy1JijueCMr0N5pG_FX7KZgBYr7aZaPp-yDFkfj8S1x-fzjTqbiBYqBUN7hURup_vLoLZzcyuJ79Kj3s8NfGFQDbhhRVyZLBv9tVpQVwhoFfzAQs6tMiS9pa7l6TIvR-XgCuyhHet0WIWfZBdlY_ql8a4h8drI2aH2lPdOVimtBNZ8zKnAdzrXEJsG315N6ke0Al8t2-GiKci25GrpTECBfkLD5J81dpyUgrQPULS8RTHUPAr3eXmFKb_WQJcyDsRRij8ytejHdm9Eego1FhcS0n70DU-7zWDYDpnvfQGXf6BBEmkayNQolT5xQradrpwFWahJeDfiAx.jpeg" width="1200" height="820" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Innenraum und Atmosphäre bei Elsken">
           <figcaption><span>03</span> Innen / Atmosphäre</figcaption>
         </figure>
-        <figure class="photo-card photo-card-tall reveal">
-          <img src="assets/kiez-placeholder.svg" width="760" height="1000" loading="lazy" alt="Demo-Platzhalter: Kiehlufer und Nachbarschaft rund um Elsken; vor Launch durch ein lizenziertes Originalfoto ersetzen">
-          <figcaption><span>04</span> Kiehlufer / Kiez</figcaption>
+        <figure class="photo-card photo-card-tall reveal depth-photo" data-scroll-depth="-0.08">
+          <img src="https://cdn.corner.inc/place-photo/AWn5SU7qJIxUbj7NlmYhWuQElMWkxm3UjqW0gzE-UgrlxikRbYCksQBZnio0CVKeZ5nNij3Uh0ANPJCBGD_WGg6ZaIxRv8OdQnH1A8BnaA2US9UkHO_QDmS-pnGIeKuVv5rjISiW_niV8upnOvYRMdCye8glqxxdEokQTkG2WzJY1NsnDvnywJMbO_2MO2mVREnNoShYiBlglF0B9iQugy54oYMaAVWIZswc-FR1YoCtWF6mMt0_q5U8QYUM7TTARoW1ED1XqYjCTKBv_eVt0gOji9gMKP1Y19FdysRjlBVqf89pvQ.jpeg" width="760" height="1000" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Café Elsken am Kiehlufer">
+          <figcaption><span>04</span> Elsken / Kiehlufer</figcaption>
         </figure>
         <aside class="quote-shape reveal" aria-label="Bewertungstrend">
           <p class="rating">4,7 <span>★</span></p>
-          <p>Google-Bewertung laut aktuell recherchierten Verzeichnissen.</p>
-          <small>Stand Recherche: September 2026. Vor Launch erneut prüfen.</small>
+          <p>Google-Bewertung laut den bei der Recherche gefundenen aktuellen Verzeichnissen.</p>
+          <small>Stand Recherche: September 2026.</small>
         </aside>
       </div>
     </section>
 
-    <section class="kiez-section" id="kiez" aria-labelledby="kiez-title">
+    <section class="gallery-section" aria-labelledby="gallery-title" data-motion-section="gallery">
+      <div class="section-shell gallery-shell">
+        <div class="gallery-head">
+          <p class="section-index">04 / Bilder</p>
+          <h2 id="gallery-title" class="display-heading reveal">Ein Blick<br><em>in Elsken.</em></h2>
+          <p class="gallery-copy reveal">Keine Stockmotive: Diese Demo-Version zeigt echte Aufnahmen des Cafés aus einer öffentlichen Google-Maps-basierten Listing-Quelle.</p>
+        </div>
+        <div class="gallery-strip" aria-label="Fotogalerie Elsken">
+          <figure class="gallery-frame gallery-frame-a reveal"><img src="https://cdn.corner.inc/place-photo/AWn5SU5LLQc_n8c54yxzO5bMxW8gQ22KfMAPeRUUsFHCNAmzMCJPDIQjRiyd4_-xXaH7emtRtaxClRJFWEdNP4KytJiAYqke-Zxx18uHYzXN18UF3LJOI9I0NZRZcl0xBxCOw82sFKQ-Xn8NX-HhCQhK7eFSbBTnji5OL3D_uUTalskN-jo4udxYJz-flSJMST8ZvndE3AqqXsmLUhOeImRqfkR2clpKTLweh9jvF1kUAJ4DOT8w7ouHeBFrfLwWqWlli0nimZDQv0llYw9TEgvMoHSGOosCeUYeDUhO2OBDepYGesF7vQGb_SMtnOJwmn5HbzA-vdc0Jn8Z0H4vFXpJBP2IRQx-3tM4jVUXK_vfgqR62wLZg8RwPr5UDI-G-7W-G5Tt4-rpekNl4KAyCitZ3RHmwwyE46srQinduxq0ycrzUy5s.jpeg" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Café Elsken von außen"></figure>
+          <figure class="gallery-frame gallery-frame-b reveal"><img src="https://cdn.corner.inc/place-photo/AWn5SU7vPoFmHDgtsQVjys8nlsiF_eyxpEc_ydWanYoKd1Ei_wUhvnEd9lPdM70ouGbJ7iJkN8cqFhcGdtDECPkGe-0FNutQDapcHDftuMcr5vxLFQFi62dQUbQWSM6M4YGjL7vrUbvkyGULpfLGBIj3Iyw9v1Nf8jeEKiFS3ZIMTR531RVMyr9Hdo1rquZSQkEtr-228y7mFQYdqI729J_zFfwH-Jo24XVyCNGLnhvdJN2ExcGTMwZpABUzyTV6x2dvymBu9mGxMne4_U2jdJONFOFfAGi4BFIZsjw5qWKbdG92jw.jpeg" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Einblick in Café Elsken"></figure>
+          <figure class="gallery-frame gallery-frame-c reveal"><img src="https://cdn.corner.inc/place-photo/AWn5SU6fiPuYzILhXTq41ALvkxFw3dAfsQHdABqKJV7xArWcqNbfK9U2IIY7A8NfOqhY1MKh_jLvQnM2KQegxjQkg-nNnCMNNscD-uPYYy1JijueCMr0N5pG_FX7KZgBYr7aZaPp-yDFkfj8S1x-fzjTqbiBYqBUN7hURup_vLoLZzcyuJ79Kj3s8NfGFQDbhhRVyZLBv9tVpQVwhoFfzAQs6tMiS9pa7l6TIvR-XgCuyhHet0WIWfZBdlY_ql8a4h8drI2aH2lPdOVimtBNZ8zKnAdzrXEJsG315N6ke0Al8t2-GiKci25GrpTECBfkLD5J81dpyUgrQPULS8RTHUPAr3eXmFKb_WQJcyDsRRij8ytejHdm9Eego1FhcS0n70DU-7zWDYDpnvfQGXf6BBEmkayNQolT5xQradrpwFWahJeDfiAx.jpeg" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Atmosphäre im Café Elsken"></figure>
+          <figure class="gallery-frame gallery-frame-d reveal"><img src="https://cdn.corner.inc/place-photo/AWn5SU4aAc_ccaShbQpDUNjhlwKjUY4uCaFnSYts37iQnkxtPg8tjq7e5mE_A90zyfkIva2Acqjwie1R7AZRdXsclfg72Y81FdDJivr7ENbdKFGI9-o_nUE9SzrAGV1dvS2wxx-kymxWfll8UPWnX5Np9pd6QRUUeCkaWKZUWp5RyYLgZoW3U6XHgluEKKHlXMFqBZ7zo9mkB6H-6HRwZg-oT5trTKbGErrTUQZcCHR3t0Dcd9TaOX5z-NIrECukS5c0QG2Iwpu1e4wdzLPMdAxbtIWBS-Fi914fFsfR5ivKm73CLg.jpeg" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Café Elsken in Berlin-Neukölln"></figure>
+        </div>
+        <a class="text-link gallery-link" href="https://www.instagram.com/cafeelsken/" target="_blank" rel="noopener">Mehr von @cafeelsken ↗</a>
+      </div>
+    </section>
+
+    <section class="kiez-section" id="kiez" aria-labelledby="kiez-title" data-motion-section="kiez">
+      <div class="kiez-orbits" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="section-shell kiez-inner">
         <div class="kiez-heading reveal">
-          <p class="section-index light">04 / Im Kiez</p>
+          <p class="section-index light">05 / Im Kiez</p>
           <h2 id="kiez-title" class="display-heading light">Ein Café, das<br><em>mitmacht.</em></h2>
         </div>
         <div class="kiez-story reveal">
           <p class="large-copy light">2026 war Café Elsken offizieller Veranstaltungsort bei <strong>48 Stunden Neukölln</strong>. Im selben Jahr fand dort auch ein Kiezgespräch rund um Kiehlufer und Harzer Kiez statt.</p>
-          <p class="light-muted">Das ist die glaubwürdigere Geschichte als eine erfundene „Community-first“-Claimsprache: Der Ort taucht tatsächlich in seinem kulturellen und nachbarschaftlichen Umfeld auf.</p>
+          <p class="light-muted">Das ist die glaubwürdigere Geschichte als eine erfundene Community-Claimsprache: Der Ort taucht tatsächlich in seinem kulturellen und nachbarschaftlichen Umfeld auf.</p>
           <div class="kiez-links">
             <a href="https://48-stunden-neukoelln.de/de/programm/fensterblicke" target="_blank" rel="noopener">48 Stunden Neukölln ↗</a>
             <a href="https://www.instagram.com/cafeelsken/" target="_blank" rel="noopener">@cafeelsken ↗</a>
@@ -219,8 +231,8 @@
       </div>
     </section>
 
-    <section class="visit section-shell" id="besuch" aria-labelledby="visit-title">
-      <p class="section-index">05 / Besuch</p>
+    <section class="visit section-shell" id="besuch" aria-labelledby="visit-title" data-motion-section="visit">
+      <p class="section-index">06 / Besuch</p>
       <div class="visit-grid">
         <div class="visit-copy reveal">
           <h2 id="visit-title" class="display-heading">Wir sehen uns<br><em>am Kiehlufer.</em></h2>
@@ -237,10 +249,7 @@
         </div>
 
         <div class="hours-card reveal" aria-labelledby="hours-title">
-          <div class="hours-head">
-            <p class="eyebrow" id="hours-title">Öffnungszeiten</p>
-            <span>10 → 18</span>
-          </div>
+          <div class="hours-head"><p class="eyebrow" id="hours-title">Öffnungszeiten</p><span>10 → 18</span></div>
           <dl class="hours-list">
             <div><dt>Montag</dt><dd>geschlossen</dd></div>
             <div><dt>Dienstag</dt><dd>10:00–18:00</dd></div>
@@ -250,17 +259,17 @@
             <div><dt>Samstag</dt><dd>10:00–18:00</dd></div>
             <div><dt>Sonntag</dt><dd>10:00–18:00</dd></div>
           </dl>
-          <p class="hours-note">Öffnungszeiten vor Anfahrt am besten noch einmal auf Google/Instagram prüfen.</p>
+          <p class="hours-note">Öffnungszeiten vor Anfahrt am besten noch einmal auf Google oder Instagram prüfen.</p>
         </div>
       </div>
     </section>
 
-    <section class="final-cta" aria-labelledby="cta-title">
-      <div class="final-cta-art" aria-hidden="true">
-        <span class="sun"></span>
-        <span class="canal-line canal-line-a"></span>
-        <span class="canal-line canal-line-b"></span>
+    <section class="final-cta" aria-labelledby="cta-title" data-motion-section="cta">
+      <div class="final-photo" aria-hidden="true">
+        <img src="https://cdn.corner.inc/place-photo/AWn5SU4aAc_ccaShbQpDUNjhlwKjUY4uCaFnSYts37iQnkxtPg8tjq7e5mE_A90zyfkIva2Acqjwie1R7AZRdXsclfg72Y81FdDJivr7ENbdKFGI9-o_nUE9SzrAGV1dvS2wxx-kymxWfll8UPWnX5Np9pd6QRUUeCkaWKZUWp5RyYLgZoW3U6XHgluEKKHlXMFqBZ7zo9mkB6H-6HRwZg-oT5trTKbGErrTUQZcCHR3t0Dcd9TaOX5z-NIrECukS5c0QG2Iwpu1e4wdzLPMdAxbtIWBS-Fi914fFsfR5ivKm73CLg.jpeg" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="">
+        <span class="final-photo-wash"></span>
       </div>
+      <div class="final-reflection" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="final-cta-copy reveal">
         <p class="eyebrow">Di–So · 10–18 Uhr</p>
         <h2 id="cta-title">Bis gleich<br><em>am Wasser.</em></h2>
@@ -273,16 +282,9 @@
   </main>
 
   <footer class="site-footer">
-    <div>
-      <a class="brand footer-brand" href="#top"><span class="brand-mark">E</span><span class="brand-name">Elsken</span></a>
-      <p>Kiehlufer 75 · 12059 Berlin</p>
-    </div>
-    <nav aria-label="Footer Navigation">
-      <a href="tel:+493028423798">Telefon</a>
-      <a href="https://www.instagram.com/cafeelsken/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.facebook.com/Cafeelsken/" target="_blank" rel="noopener">Facebook</a>
-    </nav>
-    <p class="prototype-note"><strong>Prototype:</strong> Die illustrierten Bildflächen sind bewusst als Demo-Platzhalter markiert. Vor kommerziellem Launch durch lizenzierte Elsken-Fotografie ersetzen. Quellen & Rechte: <a href="IMAGE_RIGHTS.md">IMAGE_RIGHTS.md</a>.</p>
+    <div><a class="brand footer-brand" href="#top"><span class="brand-mark">E</span><span class="brand-name">Elsken</span></a><p>Kiehlufer 75 · 12059 Berlin</p></div>
+    <nav aria-label="Footer Navigation"><a href="tel:+493028423798">Telefon</a><a href="https://www.instagram.com/cafeelsken/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/Cafeelsken/" target="_blank" rel="noopener">Facebook</a></nav>
+    <p class="prototype-note"><strong>Prototype / Foto-Hinweis:</strong> Die gezeigten echten Elsken-Fotos stammen aus einer öffentlichen Google-Maps-basierten Listing-Quelle. Vor kommerziellem Launch sollten owner-freigegebene Originaldateien eingesetzt werden. <a href="IMAGE_RIGHTS.md">Quellen & Rechte</a>.</p>
   </footer>
 
   <nav class="mobile-action-bar" aria-label="Schnellaktionen">
